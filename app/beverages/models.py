@@ -1,4 +1,5 @@
 from django.db import models
+from time_records.models import TimeRecord
 
 
 class Brand(models.Model):
@@ -14,6 +15,7 @@ class Beverage(models.Model):
     caffeine = models.IntegerField()
     volume = models.IntegerField()
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    time_record = models.ForeignKey(TimeRecord, on_delete=models.PROTECT)
 
     def __str__(self):
         return f'{self.beverage_name}, {self.caffeine}, {self.volume}, {self.brand}'
