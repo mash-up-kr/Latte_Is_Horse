@@ -8,4 +8,7 @@ class TimeRecordAdmin(admin.ModelAdmin):
       'id',
       'creator',
       'created_at',
+        'beverage',
     )
+
+

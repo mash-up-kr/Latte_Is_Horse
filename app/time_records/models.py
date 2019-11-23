@@ -2,6 +2,8 @@ from django.db import models
 from django.conf import settings
 from daily_records.models import TimeStampedModel, DailyRecord
 
+from beverage.models import Beverage
+
 
 class TimeRecord(TimeStampedModel):
     creator = models.ForeignKey(
@@ -11,11 +13,13 @@ class TimeRecord(TimeStampedModel):
         related_name='time_records'
     )
     daily_record = models.ForeignKey(
-      DailyRecord,
-      on_delete=models.CASCADE,
-      null=True,
-      related_name='time_records'
+        DailyRecord,
+        on_delete=models.CASCADE,
+        null=True,
+        related_name='time_records'
     )
+
+    beverage = models.ForeignKey(Beverage, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f'Time Record - {self.creator}'
