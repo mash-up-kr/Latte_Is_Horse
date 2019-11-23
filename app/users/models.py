@@ -10,3 +10,6 @@ class User(AbstractUser):
     )
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=50, choices=recommend_type, default="most_sensitive")
+
+    def __str__(self):
+        return f'{self.name} - type: {self.type}'
