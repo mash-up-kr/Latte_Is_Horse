@@ -15,6 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Custom UserModel (package(app)명.ModelClass명)
 AUTH_USER_MODEL = 'users.User'
 
 
