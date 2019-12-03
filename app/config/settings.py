@@ -18,7 +18,6 @@ ALLOWED_HOSTS = []
 # Custom UserModel (package(app)명.ModelClass명)
 AUTH_USER_MODEL = 'users.User'
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,4 +119,3 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 # Media files
 MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
 MEDIA_URL = '/media/'
-

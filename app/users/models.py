@@ -10,7 +10,7 @@ class User(AbstractUser):
     )
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=50, choices=recommend_type, default="most_sensitive")
-    img_profile = models.ImageField('프로필 이미지', blank=True)
+    img_profile = models.ImageField('프로필 이미지', blank=True, upload_to='user/profile')
 
     def __str__(self):
         return f'{self.name} - type: {self.type}'
